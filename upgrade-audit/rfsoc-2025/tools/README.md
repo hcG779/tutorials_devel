@@ -106,3 +106,70 @@ reused on subsequent runs; use a different output directory to retain
 separate runs.
 
 No board connection or programming is performed.
+
+## Repository frontend and backend compilation
+
+These commands run locally and do not connect to or program a board.
+
+### Frontend
+
+From the tutorial repository root:
+
+```bash
+bash upgrade-audit/rfsoc-2025/tools/run-rfsoc-frontend.sh
+```
+
+The runner migrates a fresh model copy, creates a separate build
+directory and generates Model Composer IP.
+
+Check the process exit status, log, and these markers:
+
+- FRONTEND_MODEL: path to the frontend model copy
+- FRONTEND_BUILD_DIR: build directory
+- IP_DESCRIPTOR_COUNT: at least 1
+- REPOSITORY_FRONTEND_PASS
+
+The generated backend command is saved in backend-command.txt beside
+the frontend model copy.
+
+### Backend
+
+Pass the actual FRONTEND_MODEL path from the frontend output:
+
+```bash
+bash upgrade-audit/rfsoc-2025/tools/run-rfsoc-backend.sh /absolute/path/to/model.slx
+```
+
+Replace the example path with the generated model path.
+
+The backend sources startsg.local and runs CASPER middleware, Vivado
+compilation and software packaging. The default is two jobs with
+single-threaded compilation. CASPER_BACKEND_JOBS can override the job count.
+
+The runner requires frontend outputs and refuses a build directory
+that already contains myproj, preserving earlier build results.
+
+Expected final marker: REPOSITORY_BACKEND_OUTPUTS_PASS.
+The runner checks for nonempty .bit, .bin, .xsa and .fpg outputs.
+This marker does not verify timing or hardware functionality.
+
+The backend log is saved as repository-backend.log beside the model.
+
+### Validated local rerun
+
+The repository frontend and backend completed successfully on the
+existing workstation. One IP descriptor and all expected build outputs
+were produced.
+
+Final timing: WNS +2.003 ns, WHS +0.027 ns, with zero setup, hold and
+pulse-width failing endpoints.
+
+The implementation reports confirmed asynchronous clock groups in both
+directions between clk_pl_0 and pl_clk_mmcm. The synthesis-stage clock
+lookup warnings did not result in a missing final clock-group constraint.
+
+Two AXI read-only parameter warnings remain recorded. Full CDC circuit
+correctness, clean-host installation, and hardware functionality are
+not established by these checks.
+
+See ../results/repository-build-2026-11-11/ for timing and clock reports.

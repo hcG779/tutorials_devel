@@ -1,0 +1,25 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
+| Date              : Wed Nov 11 15:49:39 2026
+| Host              : CB480-EE12586 running 64-bit Ubuntu 24.04.5 LTS
+| Command           : report_clock_interaction -file /home/hsu8411c/Desktop/casper-checks/repository-clock-interaction.rpt
+| Design            : top
+| Device            : xczu48dr-ffvg1517
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Physopt postRoute
+| Temperature Grade : E
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Clock Interaction Report
+
+Clock Interaction Table
+-----------------------
+
+                                WNS                            TNS Failing  TNS Total    WNS Path         Clock-Pair           Inter-Clock
+From Clock      To Clock        Clock Edges  WNS(ns)  TNS(ns)    Endpoints    Endpoints  Requirement(ns)  Classification       Constraints
+--------------  --------------  -----------  -------  -------  -----------  -----------  ---------------  -------------------  -------------------
+clk_pl_0        clk_pl_0        rise - rise     7.50     0.00            0         2058            10.00  Clean                Timed
+clk_pl_0        pl_clk_mmcm                                              0           69                   Ignored              Asynchronous Groups
+pl_clk_mmcm     clk_pl_0                                                 0           96                   Ignored              Asynchronous Groups
+pl_clk_mmcm     pl_clk_mmcm     rise - rise     2.00     0.00            0          293             4.07  Clean                Timed

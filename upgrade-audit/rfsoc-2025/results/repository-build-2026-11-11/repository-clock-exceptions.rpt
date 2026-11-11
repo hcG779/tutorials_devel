@@ -1,0 +1,21 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
+| Date              : Wed Nov 11 15:49:39 2026
+| Host              : CB480-EE12586 running 64-bit Ubuntu 24.04.5 LTS
+| Command           : report_exceptions -file /home/hsu8411c/Desktop/casper-checks/repository-clock-exceptions.rpt
+| Design            : top
+| Device            : xczu48dr-ffvg1517
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Physopt postRoute
+| Temperature Grade : E
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Exceptions Report
+
+Position  From                          Through         To                                 Setup           Hold            Status
+--------  ----------------------------  --------------  ---------------------------------  --------------  --------------  -----------------
+8         *                             *               [get_ports {gpio_led_0_0_ext[*]}]  false           false
+9         *                             *               [get_ports {gpio_led_1_1_ext[*]}]  false           false
+3         [get_clocks { pl_clk_mmcm }]                  [get_clocks { clk_pl_0 }]          clock_group     clock_group
+3         [get_clocks { clk_pl_0 }]                     [get_clocks { pl_clk_mmcm }]       clock_group     clock_group

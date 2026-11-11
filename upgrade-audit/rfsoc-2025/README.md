@@ -92,3 +92,19 @@ with a library-reference assertion. No ParamEvalDelete messages appeared.
 This completes the migration rerun on the current workstation.
 Full installation and end-to-end reproduction on a clean host remain
 pending.
+
+## Repository compilation rerun
+
+The repository-based frontend and backend runners completed on the
+existing workstation, producing IP and the expected FPGA artifacts.
+
+Final timing constraints were met: WNS +2.003 ns and WHS +0.027 ns.
+Post-route implementation reports confirmed the intended asynchronous
+clock groups in both directions between clk_pl_0 and pl_clk_mmcm.
+
+See [runner instructions](tools/README.md) and
+[implementation reports](results/repository-build-2026-11-11/).
+
+This supersedes earlier notes that frontend and backend runner
+consolidation was pending. Clean-host reproduction, full CDC review,
+and hardware programming and functional tests remain pending.

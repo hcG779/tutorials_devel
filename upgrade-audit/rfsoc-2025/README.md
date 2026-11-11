@@ -80,3 +80,15 @@ counter_value and system registers.
 - Other tutorial models have not been validated.
 - Scripts and migration steps still need consolidation and a fresh
   reproducibility check before becoming installation instructions.
+
+## Repository migration runner
+
+See [runner instructions](tools/README.md).
+
+The repository-based runner passed migration and diagram update on the
+existing workstation after replacing an optional Hub parameter query
+with a library-reference assertion. No ParamEvalDelete messages appeared.
+
+This completes the migration rerun on the current workstation.
+Full installation and end-to-end reproduction on a clean host remain
+pending.

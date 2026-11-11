@@ -301,7 +301,7 @@ It should look as follows when you have added all the relevant registers:
    :alt: 
 
 
-You should now have a complete Simulink design. Compare it with the complete hmc tutorial *.slx model provided to you before continuing if unsure.
+You should now have a complete Simulink design. Compare it with the complete hmc tutorial ``*.slx`` model provided to you before continuing if unsure.
 
 Simulink Simulation
 -------------------
@@ -410,7 +410,7 @@ Programming the FPGA
 Reconfiguration of the SKARAB's SDRAM is done via the casperfpga python library. The casperfpga package for python, created by the SA-SKA group, wraps the Telnet commands in python and is used in the CASPER community. We will focus on programming and interacting with the FPGA using this method.
 
 Getting the required packages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 These are pre-installed on the server in the workshop and you do not need to do any further configuration, but if you are not working from the lab then refer to the How To Setup CasperFpga Python Packages document for setting up the python libraries for casperfpga. This can be found in the "casperfpga" repo wiki (to be deprecated) located in GitHub and the ReadtheDocs casperfpga documentation link:
 
@@ -419,7 +419,7 @@ These are pre-installed on the server in the workshop and you do not need to do 
 `https://casper-toolflow.readthedocs.io <https://casper-toolflow.readthedocs.io/>`_
 
 Copy your .fpg file to your NFS server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As per the previous figure, navigate to the outputs folder and (secure)copy this across to a test folder on the workshop server.
 
@@ -428,7 +428,7 @@ As per the previous figure, navigate to the outputs folder and (secure)copy this
    scp path_to/your/model_folder/your_model_name/outputs/your_fpgfile.fpg user@server:/path/to/test/folder/
 
 Connecting to the board
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 SSH into the server that the SKARAB is connected to and navigate to the folder in which your .fpg file is stored.
 
@@ -493,9 +493,9 @@ You can read back the HMC mezzanine site, HMC die revisions and internal status 
 Manually typing these commands by hand will be cumbersome, so it is better to create a Python script that will do all of this for you. This is described below.
 
 Running a Python script and interacting with the FPGA
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A pre-written python script, ''tut_hmc.py'' is provided. The code within the python script is well commented and won't be explained here. The user can read through the script in his/her own time. In summary, this script programs the fpga with your complied design (.fpg file), writes to the control registers, initates the HMC write & read process, reads back the HMC snap shot captured data and status registers while displaying them to the screen for analysis. In order to run this script you will need to edit the file and change the target SKARAB IP address and the *.fpg file, if they are different. The script is run using:
+A pre-written python script, ''tut_hmc.py'' is provided. The code within the python script is well commented and won't be explained here. The user can read through the script in his/her own time. In summary, this script programs the fpga with your complied design (.fpg file), writes to the control registers, initates the HMC write & read process, reads back the HMC snap shot captured data and status registers while displaying them to the screen for analysis. In order to run this script you will need to edit the file and change the target SKARAB IP address and the ``*.fpg`` file, if they are different. The script is run using:
 
 .. code-block:: python
 
@@ -504,7 +504,7 @@ A pre-written python script, ''tut_hmc.py'' is provided. The code within the pyt
 If everything goes as expected, you should see a whole bunch of text on your screen - this is the output of the snap block and status register contents.
 
 Analysing the Display Data
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You should see something like this:
 

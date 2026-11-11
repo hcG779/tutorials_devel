@@ -352,7 +352,7 @@ We first initialize the driver; a doc string is provided for all functions,
 letting one use IPythons help `?` mechanism to get more information about a
 method's signature and a brief description of its functionality.
 
-.. code:: python
+.. code:: text
 
   In [6]: rfdc_zcu216.init?
   Signature: rfdc.init(lmk_file=None, lmx_file=None, upload=False)
@@ -412,7 +412,7 @@ helper methods to program the PLLs and manage the available register files:
 
 First take a look at ``progpll()``:
 
-.. code:: python
+.. code:: text
 
   In [9]: rfdc_zcu216.progpll?
   Signature: rfdc.progpll(plltype, fpath=None, upload=False, port=None)

@@ -48,9 +48,8 @@ as two samples are required to reconstruct a given waveform .
 .. image:: ../../../_static/img/skarab/tut_spec/freq_eq.png
    :target: ../../../_static/img/skarab/tut_spec/freq_eq.png
    :alt: 
-,
 
-and is the width of each frequency bin. Correspondingly, Δf is a measure of how precise you can measure a frequency.
+This is the width of each frequency bin. Correspondingly, Δf is a measure of how precise you can measure a frequency.
 
 
 * **Time resolution**\ : Time resolution is simply the spectral dump rate of your instrument. We generally accumulate multiple spectra to average out noise; the more accumulations we do, the lower the time resolution. For looking at short timescale events, such as pulsar bursts, higher time resolution is necessary; conversely, if we want to look at a weak HI signal, a long accumulation time is required, so time resolution is less important.
@@ -333,7 +332,7 @@ All communication and configuration will be done by the python control script ca
 Next, you need to set up your SKARAB. Switch it on, making sure that:
 
 •   Your tone source is set within the band of the ADC.  The default digital downconverter setting is 1 GHz, so signals within 375 MHz of this frequency should pass. In the tut_spec.py
-script, 1 GHz is mapped to DC.  In our setup, we set the tone frequency to 1.054 GHz.  If you use a different tone frequency, be sure to update the ``freq_range_mhz = [0,80]`` in the Python script so that the plot covers the range of your tone.
+    script, 1 GHz is mapped to DC.  In our setup, we set the tone frequency to 1.054 GHz.  If you use a different tone frequency, be sure to update the ``freq_range_mhz = [0,80]`` in the Python script so that the plot covers the range of your tone.
 
 The tut_spec.py spectrometer script
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -44,11 +44,11 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
-    'sphinx.ext.imgmath',
+    'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
-    'sphinx_markdown_tables',
+    'myst_parser',
     'sphinxcontrib.video',
 ]
 
@@ -58,13 +58,11 @@ templates_path = ['_templates']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-source_suffix = ['.rst', '.md']
+source_suffix = {'.rst': 'restructuredtext', '.md': 'markdown'}
 # source_suffix = '.rst'
 
 # Sphinx Markdown support
-source_parsers = {
-    '.md': 'recommonmark.parser.CommonMarkParser',
-}
+# Markdown is parsed by the myst_parser extension.
 
 # The master toctree document.
 master_doc = 'index'
@@ -74,7 +72,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -94,7 +92,6 @@ html_theme = "sphinx_rtd_theme"
 # html_logo = '_static/img/cropped-casper_logo.png'
 html_theme_options = {
     'collapse_navigation': False,
-    'display_version': True,
     'logo_only': False,
 }
 
@@ -131,22 +128,8 @@ htmlhelp_basename = 'CASPERTutorialsdoc'
 # Embedding videos into a PDF is not supported. Extend the Sphinx.writer.latex
 # to just skip the node. This will result in nothing being placed in the
 # resulting LaTeX and output PDF
-from docutils import nodes
-from sphinxcontrib import video
-from sphinx.writers import latex
-
-def visit_video(self, node):
-    self.builder.warn('using "video" inside a PDF is not supported. This node '
-      'will be skipped resulting in no output to the LaTeX or PDF document. '
-      'Consider extending the video node to instead place a still image a '
-      'frame for the video.')
-    raise nodes.SkipNode
-
-def depart_video(self, node):
-    pass
-
-def setup(app):
-    app.add_node(video, latex=(visit_video, depart_video), override=True)
+# HTML video support is provided by sphinxcontrib.video.
+# PDF output is not covered by this validation.
 
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
@@ -202,7 +185,7 @@ texinfo_documents = [
 # -- Options for intersphinx extension ---------------------------------------
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
+intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 
 # -- Options for todo extension ----------------------------------------------
 

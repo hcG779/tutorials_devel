@@ -8,7 +8,7 @@ Tutorial 4:  Wideband Spectrometer - Bypass Mode
 Preface
 -------
 
-This tutorial is adapted from the original one found `Here <https://casper-toolflow.readthedocs.io/projects/tutorials/en/latest/tutorials/skarab/tut_spec.html>`_. It is now leveraged to support ADC operating in Digital Down Convereter (DDC) Bypass bandwidth mode. The ADC modules based on ADC32RF45 chips which support both DDC and DDC Bypass bandwidth modes are applicable in this tutorial while focussing only on the DDC Bypass mode.
+This tutorial is adapted from the original one found `Here <https://casper-toolflow.readthedocs.io/projects/tutorials/en/latest/tutorials/skarab/tut_spec.html>`__. It is now leveraged to support ADC operating in Digital Down Convereter (DDC) Bypass bandwidth mode. The ADC modules based on ADC32RF45 chips which support both DDC and DDC Bypass bandwidth modes are applicable in this tutorial while focussing only on the DDC Bypass mode.
 
 Introduction
 ------------
@@ -20,7 +20,7 @@ When designing a spectrometer for astronomical applications, it's important to c
 Setup
 -----
 
-This tutorial comes with completed model files, compiled bitstreams, ready for execution on SKARAB, as well as Python scripts to configure the SKARAB and make plots. `Here <https://github.com/casper-astro/tutorials_devel/tree/master/skarab/tut_spec/tut_spec_byp>`_
+This tutorial comes with completed model files, compiled bitstreams, ready for execution on SKARAB, as well as Python scripts to configure the SKARAB and make plots. `Here <https://github.com/casper-astro/tutorials_devel/tree/master/skarab/tut_spec/tut_spec_byp>`__
 
 Spectrometer Basics
 -------------------
@@ -53,9 +53,8 @@ as two samples are required to reconstruct a given waveform .
 .. image:: ../../../_static/img/skarab/tut_spec/freq_eq.png
    :target: ../../../_static/img/skarab/tut_spec/freq_eq.png
    :alt: 
-,
 
-and is the width of each frequency bin. Correspondingly, Δf is a measure of how precise you can measure a frequency.
+This is the width of each frequency bin. Correspondingly, Δf is a measure of how precise you can measure a frequency.
 
 
 * **Time resolution**\ : Time resolution is simply the spectral dump rate of your instrument. We generally accumulate multiple spectra to average out noise; the more accumulations we do, the lower the time resolution. For looking at short timescale events, such as pulsar bursts, higher time resolution is necessary; conversely, if we want to look at a weak HI signal, a long accumulation time is required, so time resolution is less important.

@@ -4,7 +4,7 @@ Guide to Setting Up Your New Red Pitaya
 
 This guide will show you how to setup your Red Pitaya (RP) for use with the casper tools - ``mlib_devel`` and ``casperfpga``. 
 
-Setting up the Red Pitaya involves installing and building a few things through script commands on the Red Pitaya OS. If you need to install a blank SD card with the Red Pitaya OS please follow the setup instructions on the Red Pitaya site `here <https://redpitaya.readthedocs.io/en/latest/quickStart/SDcard/SDcard.html>`_\ , otherwise use the SD card that came supplied with the hardware.
+Setting up the Red Pitaya involves installing and building a few things through script commands on the Red Pitaya OS. If you need to install a blank SD card with the Red Pitaya OS please follow the setup instructions on the Red Pitaya site `here <https://redpitaya.readthedocs.io/en/latest/quickStart/SDcard/SDcard.html>`__\ , otherwise use the SD card that came supplied with the hardware.
 
 Running the script on a preloaded RP SD Card
 --------------------------------------------
@@ -55,4 +55,4 @@ Running the script on a preloaded RP SD Card
 
 
 * This will install git on the RP, clone and build tcpborphserver (a server designed to control and speak to CASPER hardware using KATCP) and then set it to run on startup.
-* Your RP is now casperized and you can communicate with it via ``casperfpga``. For details on installing ``casperfpga``\ , please see `here <https://casper-toolflow.readthedocs.io/en/latest/src/How-to-install-casperfpga.html>`_.
+* Your RP is now casperized and you can communicate with it via ``casperfpga``. For details on installing ``casperfpga``\ , please see `here <https://casper-toolflow.readthedocs.io/en/latest/src/How-to-install-casperfpga.html>`__.

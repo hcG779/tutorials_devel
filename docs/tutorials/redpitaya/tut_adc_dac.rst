@@ -174,7 +174,7 @@ The basic principle of the snap block is that it is primed by the user and then 
 
 In the case of this tutorial, the arming and triggering is done via software. The trigger is the rst signal. The "we" signal on the snapshot blocks is the ADC data valid signal. Configure and connect the snap blocks as shown above. The delay is not really necessary, but if your data was not aligned then you could use delays for this. The following settings should be used for the bitfield snapshot blocks: storage medium should be BRAM, number of samples ("2^?") should be 10, Data width 32, all boxes unchecked except "use DSP48s to implement counters", Pre-snapshot delay should be 0.
 
-You should now have a complete Simulink design. Compare it with the complete ADC and DAC interface tutorial *.slx model provided to you before continuing if unsure.
+You should now have a complete Simulink design. Compare it with the complete ADC and DAC interface tutorial ``*.slx`` model provided to you before continuing if unsure.
 
 Compilation
 -----------
@@ -231,7 +231,7 @@ Programming the FPGA (Zynq PL)
 Reconfiguration of the Red Pitaya's Zynq is done via the casperfpga python library. The casperfpga package for python, created by the SA-SKA group, wraps the Telnet commands in python. and is commonly used in the CASPER community. We will focus on programming and interacting with the Programmable Logic (PL) of the Zynq using this method.
 
 Getting the required packages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 These are pre-installed on the server in the workshop and you do not need to do any further configuration, but if you are not working from the lab then refer to the How To Setup CasperFpga Python Packages document for setting up the python libraries for casperfpga. This can be found in the "casperfpga" github repo located on GitHub and the ReadtheDocs casperfpga documentation link:
 
@@ -240,7 +240,7 @@ These are pre-installed on the server in the workshop and you do not need to do 
 `https://casper-toolflow.readthedocs.io <https://casper-toolflow.readthedocs.io/>`_
 
 Copy your .fpg file to your NFS server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As per the previous figure, navigate to the outputs folder and (secure)copy this across to a test folder on the workshop server.
 
@@ -249,7 +249,7 @@ As per the previous figure, navigate to the outputs folder and (secure)copy this
    scp path_to/your/model_folder/your_model_name/outputs/your_fpgfile.fpg user@server:/path/to/test/folder/
 
 Connecting to the board
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 SSH into the server that the Red Pitaya is connected to and navigate to the folder in which your .fpg file is stored.
 
@@ -311,9 +311,9 @@ Try the following - add a "?" (leave out the brackets) to find out what the func
 Manually typing these commands by hand will be cumbersome, so it is better to create a Python script that will do all of this for you. This is described below.
 
 Running a Python script and interacting with the Zynq PL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A pre-written python script, ''tut_adc_dac.py'' is provided. The code within the python script is well commented and won't be explained here. The user can read through the script in his/her own time. In summary, this script programs the Zynq PL with your compiled design (.fpg file), writes to the reset control register, reads back the ADC snap shot captured data and status registers while displaying them to the screen for analysis. In order to run this script you will need to edit the file and change the target Red Pitaya IP address and the *.fpg file, if they are different. The script is run using:
+A pre-written python script, ''tut_adc_dac.py'' is provided. The code within the python script is well commented and won't be explained here. The user can read through the script in his/her own time. In summary, this script programs the Zynq PL with your compiled design (.fpg file), writes to the reset control register, reads back the ADC snap shot captured data and status registers while displaying them to the screen for analysis. In order to run this script you will need to edit the file and change the target Red Pitaya IP address and the ``*.fpg`` file, if they are different. The script is run using:
 
 .. code-block:: python
 
@@ -322,7 +322,7 @@ A pre-written python script, ''tut_adc_dac.py'' is provided. The code within the
 If everything goes as expected, you should see a whole bunch of text on your screen - this is the output of the snap block and status register contents.
 
 Analysing the Display Data
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You should see something like this:
 

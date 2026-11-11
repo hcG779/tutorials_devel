@@ -18,7 +18,7 @@ Creating Your Design
 Create a New Model
 ^^^^^^^^^^^^^^^^^^
 
-Start MATLAB via executing the :raw-html-m2r:`<code>startsg</code>` command, as described `here <https://casper-toolflow.readthedocs.io/en/latest/src/Running-the-Toolflow.html>`_. This ensures that necessary Xilinx and CASPER libraries are loaded into development environment by Simulink. When MATLAB starts up, open Simulink by typing :raw-html-m2r:`<i>simulink</i>` on the MATLAB command line. Start a new model, and save it with an appropriate name. **With Simulink, it is very wise to save early and often**.
+Start MATLAB via executing the :raw-html-m2r:`<code>startsg</code>` command, as described `here <https://casper-toolflow.readthedocs.io/en/latest/src/Running-the-Toolflow.html>`__. This ensures that necessary Xilinx and CASPER libraries are loaded into development environment by Simulink. When MATLAB starts up, open Simulink by typing :raw-html-m2r:`<i>simulink</i>` on the MATLAB command line. Start a new model, and save it with an appropriate name. **With Simulink, it is very wise to save early and often**.
 
 There are some Matlab limitations you should be aware-of right from the start:
 
@@ -33,7 +33,7 @@ There are some Matlab limitations you should be aware-of right from the start:
 Library organization
 ^^^^^^^^^^^^^^^^^^^^
 
-There are three libraries which you will use when you design firmware in Simulink. More information on the toolflow itself can be found `here <https://casper-toolflow.readthedocs.io/en/latest/jasper_documentation.html>`_.
+There are three libraries which you will use when you design firmware in Simulink. More information on the toolflow itself can be found `here <https://casper-toolflow.readthedocs.io/en/latest/jasper_documentation.html>`__.
 
 
 #. The **CASPER XPS Library** contains "Yellow Blocks" -- these are blocks which encapsulate interfaces to hardware (ADCs, Memory chips, CPUs, Ethernet ports, etc.) 
@@ -445,17 +445,17 @@ Programming the FPGA
 Reconfiguration of CASPER FPGA boards is achieved using the casperfpga python library, created by the SA-SKA group.
 
 Getting the required packages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-These are pre-installed on the server in the workshop and you do not need to do any further configuration. However, should you want to run these tutorials on your own machines, you should download the latest casperfpga libraries from `here. <https://github.com/casper-astro/casperfpga>`_
+These are pre-installed on the server in the workshop and you do not need to do any further configuration. However, should you want to run these tutorials on your own machines, you should download the latest casperfpga libraries from `here. <https://github.com/casper-astro/casperfpga>`__
 
 Copy your .fpg file to your Server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Navigate to the outputs folder (eg red_pitaya/tut_intro/red_pitaya_tut_intro/outputs/) and (secure)copy this across to a test folder on the workshop server. Instructions to do this are available `here <https://github.com/casper-astro/tutorials_devel/blob/master/workshop_setup.md#getting-your-designs-on-to-hardware>`_. If you are running the tutorial on your own machine, with the Red Pitaya connected directly to your machine, you do not need to complete this step. 
+Navigate to the outputs folder (eg red_pitaya/tut_intro/red_pitaya_tut_intro/outputs/) and (secure)copy this across to a test folder on the workshop server. Instructions to do this are available `here <https://github.com/casper-astro/tutorials_devel/blob/master/workshop_setup.md#getting-your-designs-on-to-hardware>`__. If you are running the tutorial on your own machine, with the Red Pitaya connected directly to your machine, you do not need to complete this step.
 
 Connecting to the board
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 SSH into the server that the Red Pitaya board is connected to and navigate to the folder in which your .fpg file is stored. Once again, running this tutorial with the Red Pitaya connected directly to your machine means you do not need to complete this step and can complete the following from the outputs folder on your own machine (provided you have installed casperfpga).
 

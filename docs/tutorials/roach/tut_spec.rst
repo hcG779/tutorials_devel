@@ -49,9 +49,8 @@ as two samples are required to reconstruct a given waveform .
 .. image:: ../../_static/img/tut_spec/freq_eq.png
    :target: ../../_static/img/tut_spec/freq_eq.png
    :alt: 
-,
 
-and is the width of each frequency bin. Correspondingly, Δf is a measure of how precise you can measure a frequency.
+This is the width of each frequency bin. Correspondingly, Δf is a measure of how precise you can measure a frequency.
 
 
 * **Time resolution**\ : Time resolution is simply the spectral dump rate of your instrument. We generally accumulate multiple spectra to average out noise; the more accumulations we do, the lower the time resolution. For looking at short timescale events, such as pulsar bursts, higher time resolution is necessary; conversely, if we want to look at a weak HI signal, a long accumulation time is required, so time resolution is less important.

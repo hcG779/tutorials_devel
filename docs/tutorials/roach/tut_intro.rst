@@ -13,7 +13,7 @@ Creating Your Design
 Create a New Model
 ^^^^^^^^^^^^^^^^^^
 
-Start MATLAB via executing the :raw-html-m2r:`<code>startsg</code>` command, as described `here <https://casper-toolflow.readthedocs.io/en/latest/src/Running-the-Toolflow.html>`_. This ensures that necessary Xilinx and CASPER libraries are loaded into development environment by Simulink. When MATLAB starts up, open Simulink by typing :raw-html-m2r:`<i>simulink</i>` on the MATLAB command line. Start a new model, and save it with an appropriate name. **With Simulink, it is very wise to save early and often**.
+Start MATLAB via executing the :raw-html-m2r:`<code>startsg</code>` command, as described `here <https://casper-toolflow.readthedocs.io/en/latest/src/Running-the-Toolflow.html>`__. This ensures that necessary Xilinx and CASPER libraries are loaded into development environment by Simulink. When MATLAB starts up, open Simulink by typing :raw-html-m2r:`<i>simulink</i>` on the MATLAB command line. Start a new model, and save it with an appropriate name. **With Simulink, it is very wise to save early and often**.
 
 There are some Matlab limitations you should be aware-of right from the start:
 
@@ -413,17 +413,17 @@ Programming the FPGA
 Reconfiguration of CASPER FPGA boards is achieved using the casperfpga python library, created by the SA-SKA group.
 
 Getting the required packages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-These are pre-installed on the server in the workshop and you do not need to do any further configuration. However, should you want to run these tutorials on your own machines, you should download the latest casperfpga libraries from `here. <https://github.com/casper-astro/casperfpga>`_
+These are pre-installed on the server in the workshop and you do not need to do any further configuration. However, should you want to run these tutorials on your own machines, you should download the latest casperfpga libraries from `here. <https://github.com/casper-astro/casperfpga>`__
 
 Copy your .fpg file to your Server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As per the previous figure, navigate to the outputs folder and (secure)copy this across to a test folder on the workshop server. Instructions to do this are available `here <https://casper.berkeley.edu/wiki/Casper_Caltech_Workshop_2017_Tutorials_Help_Page#Getting_your_designs_on_to_hardware_.3D>`_
+As per the previous figure, navigate to the outputs folder and (secure)copy this across to a test folder on the workshop server. Instructions to do this are available `here <https://casper.berkeley.edu/wiki/Casper_Caltech_Workshop_2017_Tutorials_Help_Page#Getting_your_designs_on_to_hardware_.3D>`__
 
 Connecting to the board
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 SSH into the server that the ROACH board is connected to and navigate to the folder in which your .fpg file is stored.
 

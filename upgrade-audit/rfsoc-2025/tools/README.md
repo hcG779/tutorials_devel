@@ -63,3 +63,46 @@ simulation, FPGA compilation or hardware validation.
 The launcher uses a workaround that intercepts the AMD launcher's final
 exec call to run MATLAB in batch mode. This depends on the tested AMD
 2025.1 launcher behavior and may need revision for other versions.
+
+## Repository migration and arithmetic simulation
+
+From the tutorial repository root, run:
+
+```bash
+bash upgrade-audit/rfsoc-2025/tools/run-rfsoc-simulation.sh
+```
+
+This runner initializes the environment, migrates a fresh copy of the
+original model, and passes that model directly to the arithmetic test.
+It does not obtain the model path from an earlier log.
+
+The simulation uses a scoped system-linker override. Temporary signal
+logging blocks are added in memory and are not saved to the model.
+
+Validated cases:
+
+| A | B | Expected result |
+|---:|---:|---:|
+| 10 | 20 | 30 |
+| 0 | 0 | 0 |
+| 12345 | 6789 | 19134 |
+
+All three cases passed on the test workstation, with exit code 0 and
+the final markers ARITHMETIC_CHECK_PASS and REPOSITORY_SIMULATION_PASS.
+
+Known warnings remain:
+
+- The gpio_ctr output is unconnected.
+- Temporary logging branches directly connect Model Composer outputs
+  to native Simulink blocks, producing externally-connected-block warnings.
+
+This validates the instrumented arithmetic simulation. It does not
+validate all counter behavior, overflow boundaries, FPGA compilation,
+or hardware operation.
+
+The test saves rfsoc-arithmetic-case-1.mat through
+rfsoc-arithmetic-case-3.mat in CASPER_CHECKS_DIR. These filenames are
+reused on subsequent runs; use a different output directory to retain
+separate runs.
+
+No board connection or programming is performed.

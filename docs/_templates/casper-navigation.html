@@ -1,0 +1,75 @@
+{% macro navlink(target, label) -%}
+<a href="{{ pathto(target) }}"
+   {% if pagename == target %}aria-current="page"{% endif %}>{{ label }}</a>
+{%- endmacro %}
+
+<nav aria-label="Tutorial navigation" class="casper-navigation">
+  <p><strong>Start here</strong></p>
+  <ul class="list-unstyled">
+    <li>{{ navlink('index', 'Tutorial home') }}</li>
+    <li>{{ navlink('environment', 'Environment & compatibility') }}</li>
+  </ul>
+
+  <p><strong>RFSoC</strong></p>
+  <ul class="list-unstyled">
+    <li>{{ navlink('tutorials/rfsoc/readme', 'Introduction') }}</li>
+    <li>{{ navlink('environment', 'Environment & setup') }}</li>
+
+    <li>
+      <details class="casper-nav-group"
+        {% if pagename in [
+          'tutorials/rfsoc/tut_platform',
+          'tutorials/rfsoc/upgrade_2025'
+        ] %}open{% endif %}>
+        <summary>Tutorial 1 · Basic platform</summary>
+        <ul class="list-unstyled">
+          <li>{{ navlink('tutorials/rfsoc/upgrade_2025', '2025 workflow · RFSoC 4x2') }}</li>
+          {% for number, label in [
+            (1, 'Migrate the model'),
+            (2, 'Simulate arithmetic'),
+            (3, 'Generate IP'),
+            (4, 'Build the FPGA design'),
+            (5, 'Review results')
+          ] %}
+          <li class="casper-nav-step">
+            <a href="{{ pathto('tutorials/rfsoc/upgrade_2025') }}#{{ {1: 'migrate-the-original-model', 2: 'validate-arithmetic-in-simulation', 3: 'generate-model-composer-ip', 4: 'build-and-package-the-fpga-design', 5: 'review-the-build-results'}[number] }}">
+              {{ number }}. {{ label }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </details>
+    </li>
+
+    {% for slug, label in [
+      ('tut_rfdc', 'RFDC interface'),
+      ('tut_dac', 'DAC interface'),
+      ('tut_spec', 'Example spectrometer'),
+      ('tut_100g', '100GbE')
+    ] %}
+    <li>{{ navlink('tutorials/rfsoc/' ~ slug, label) }}</li>
+    {% endfor %}
+
+    <li>
+      <details class="casper-nav-group">
+        <summary>Legacy reference · not revalidated</summary>
+        <ul class="list-unstyled">
+          <li>{{ navlink('tutorials/rfsoc/tut_getting_started', 'Setup · 2021') }}</li>
+          <li>{{ navlink('tutorials/rfsoc/tut_platform', 'Manual platform tutorial · 2021') }}</li>
+        </ul>
+      </details>
+    </li>
+  </ul>
+
+  <p><strong>Other platforms</strong></p>
+  <ul class="list-unstyled">
+    {% for slug, label in [
+      ('snap', 'SNAP'),
+      ('skarab', 'SKARAB'),
+      ('redpitaya', 'Red Pitaya')
+    ] %}
+    <li>{{ navlink('tutorials/' ~ slug ~ '/tut_intro', label) }}</li>
+    {% endfor %}
+    <li>{{ navlink('index', 'All tutorials') }}</li>
+  </ul>
+</nav>

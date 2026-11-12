@@ -88,11 +88,14 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_rtd_theme"
+html_theme = "pydata_sphinx_theme"
 # html_logo = '_static/img/cropped-casper_logo.png'
 html_theme_options = {
-    'collapse_navigation': False,
-    'logo_only': False,
+    "navbar_center": [],
+    "navbar_end": ["theme-switcher", "navbar-icon-links"],
+    "show_nav_level": 1,
+    "show_toc_level": 2,
+    "navigation_depth": 4,
 }
 
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -191,3 +194,17 @@ intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+# CASPER documentation presentation.
+extensions += [
+    name for name in ("sphinx_copybutton",)
+    if name not in extensions
+]
+html_css_files = globals().get("html_css_files", []) + [
+    "css/casper-modern.css"
+]
+
+# CASPER persistent tutorial navigation.
+html_sidebars = {
+    "**": ["casper-navigation.html"],
+}

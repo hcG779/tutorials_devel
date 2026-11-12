@@ -1,6 +1,12 @@
 Getting Started With RFSoC
 ==========================
 
+.. note::
+
+   The instructions below describe the original 2021 toolchain.
+   For the RFSoC 4x2 evaluation with MATLAB R2025a and AMD tools
+   2025.1, follow :doc:`upgrade_2025` and check its validation scope.
+
 Introduction
 ------------
 
@@ -353,3 +359,9 @@ proceed to boot.
 .. _device-tree-xlnx: https://github.com/Xilinx/device-tree-xlnx/
 .. _venv-package: https://docs.python.org/3/tutorial/venv.html
 .. _conda-homepage: https://docs.conda.io/projects/conda/en/latest/index.html
+
+
+.. toctree::
+   :hidden:
+
+   upgrade_2025

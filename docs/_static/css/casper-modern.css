@@ -1,0 +1,163 @@
+/* CASPER documentation: typography and visual hierarchy. */
+html {
+  --pst-font-family-base: system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --pst-font-family-heading: var(--pst-font-family-base);
+}
+html[data-theme="light"] {
+  --pst-color-primary: #087e8b;
+  --pst-color-secondary: #3158a8;
+  --pst-color-background: #ffffff;
+}
+html[data-theme="dark"] {
+  --pst-color-primary: #66d9d0;
+  --pst-color-secondary: #9dbbff;
+}
+body {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.bd-main .bd-content .bd-article-container {
+  max-width: 64rem;
+}
+.bd-article h1 {
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.18;
+  margin-bottom: 1.5rem;
+}
+.bd-article h2 {
+  margin-top: 2.8rem;
+  letter-spacing: -0.02em;
+}
+.bd-article p {
+  margin-bottom: 1.2rem;
+}
+.bd-article div.highlight {
+  border-radius: 0.75rem;
+  border: 1px solid var(--pst-color-border);
+}
+.bd-article div.highlight pre {
+  padding: 1.2rem;
+  line-height: 1.65;
+}
+.bd-article .admonition {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+.bd-article table {
+  font-size: 0.92rem;
+}
+.bd-article th,
+.bd-article td {
+  padding: 0.75rem 1rem;
+}
+.bd-sidebar-primary {
+  font-size: 0.92rem;
+}
+
+/* Homepage platform navigation. */
+.casper-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 2rem;
+}
+.casper-platform-card {
+  padding: 1.5rem;
+  border: 1px solid var(--pst-color-border);
+  border-radius: 1rem;
+  background: var(--pst-color-surface);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 5%);
+}
+.casper-platform-card > p:first-child {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+.casper-platform-card > p:last-child {
+  margin-bottom: 0;
+}
+.casper-platform-card a {
+  font-weight: 650;
+}
+@media (max-width: 640px) {
+  .casper-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Platform card alignment fix. */
+.bd-article .casper-platform-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  min-width: 0;
+}
+.bd-article .casper-platform-card > p:last-child {
+  margin-top: auto;
+  margin-bottom: 0;
+  padding-top: 0.75rem;
+}
+
+/* Persistent tutorial navigation. */
+.casper-navigation {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.casper-navigation > p {
+  margin: 1.5rem 0 0.5rem;
+}
+.casper-navigation > p:first-child {
+  margin-top: 0;
+}
+.casper-navigation li {
+  margin: 0.15rem 0;
+}
+.casper-navigation a {
+  display: block;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.4rem;
+  text-decoration: none;
+}
+.casper-navigation a:hover,
+.casper-navigation a:focus-visible {
+  background: var(--pst-color-surface);
+  text-decoration: underline;
+}
+.casper-navigation a[aria-current="page"] {
+  color: var(--pst-color-primary);
+  font-weight: 700;
+  border-left: 3px solid currentColor;
+}
+
+/* Grouped RFSoC navigation. */
+.casper-navigation .casper-nav-group {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.casper-navigation .casper-nav-group > summary {
+  display: list-item;
+  list-style: disclosure-closed inside;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 0.4rem;
+}
+.casper-navigation .casper-nav-group[open] > summary {
+  list-style-type: disclosure-open;
+}
+.casper-navigation .casper-nav-group > summary:hover {
+  background: var(--pst-color-surface);
+}
+.casper-navigation .casper-nav-group > ul {
+  margin: 0.25rem 0 0.75rem 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--pst-color-border);
+}
+.casper-navigation .casper-nav-step {
+  padding-left: 0.75rem;
+  font-size: 0.85rem;
+}

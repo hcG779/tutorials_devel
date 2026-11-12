@@ -1,6 +1,21 @@
 Tutorial 1: RFSoC Platform Yellow Block and Simulink Overview
 ==============================================================
 
+.. warning::
+
+   This is the original manual tutorial for the 2021 toolchain.
+   Its complete sequence has not been revalidated with ``MATLAB R2025a``
+   and ``AMD tools 2025.1``.
+
+   The current evaluation used the existing example model and validated
+   migration, arithmetic simulation, IP generation and FPGA compilation.
+   Creating the design manually from a blank model and functional
+   device-tree overlay validation remain unverified. Loading the compiled
+   example, basic register access, addition and counter control have since
+   passed on hardware; see the current workflow for results.
+
+   For the tested local workflow, follow :doc:`upgrade_2025`.
+
 In this tutorial, you will make a simple design for an RFSoC board using the
 CASPER toolflow. You will:
 
